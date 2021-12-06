@@ -13,6 +13,24 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "notes"
+    label: "Notes"
+    label_singular: "Note"
+    folder: "src/pages/notes"
+    create: true
+    delete: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - {
+        label: "Resources",
+        name: "resources",
+        widget: "file",
+        required: false,
+        media_library:
+          config:
+            multiple: true
+      }
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
